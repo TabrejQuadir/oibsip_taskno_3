@@ -4,7 +4,6 @@ import { AiOutlineCloseCircle, AiOutlineCheckCircle } from 'react-icons/ai';
 import dayjs from 'dayjs';
 import Loader from '../components/loader/Loader';
 import DashboardModal from '../components/dashboardModal/DashboardModal';
-import { Link } from "react-router-dom"
 import ErrorPage from '../components/errorPage/ErrorPage';
 
 const DashboardPage = () => {
@@ -16,22 +15,25 @@ const DashboardPage = () => {
 
     useEffect(() => {
         const fetchPizzas = async () => {
+            setLoading(true); 
             try {
                 const pizzas = await getPizzaByUserId();
-                setOrders(pizzas);
+                if (pizzas.length === 0) {
+                    setError('No pizzas found. Please add a pizza to view on your dashboard.');
+                } else {
+                    setOrders(pizzas);
+                }
             } catch (error) {
-                setError('Failed to load pizzas');
+                setError('Failed to load pizzas. Please try again later.');
+            } finally {
+                setLoading(false); 
             }
         };
+    
         fetchPizzas();
 
-        const timer = setTimeout(() => {
-            setLoading(false);
-        }, 500);
-
-        return () => clearTimeout(timer);
     }, []);
-
+    
     if (loading) return <Loader />;
     if (error) return <ErrorPage errorMessage={error} />;
 
