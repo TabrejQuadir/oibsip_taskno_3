@@ -1,0 +1,40 @@
+/* Footer Link Styling */
+footer .bg-gradient-to-r {
+    background: linear-gradient(to right, #00b4d8, #90e0ef);
+}
+
+.footer-link {
+    color: #fff;
+    transition: color 0.3s ease, transform 0.3s ease, text-shadow 0.3s ease;
+}
+
+.footer-link:hover {
+    color: #d8f823;
+    transform: scale(1.1);
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.7);
+}
+
+.social-icon {
+    color: #fbbf24;
+    font-size: 2rem;
+    transition: color 0.3s ease, transform 0.3s ease;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    z-index: 10;
+}
+
+.social-icon:hover {
+    color: #fff;
+    transform: scale(1.2);
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.7);
+}
+
+/* Responsive adjustments for screens smaller than 768px */
+@media (max-width: 768px) {
+    footer {
+        padding: 4px 2%; 
+    }
+
+    .footer-link {
+        padding: 6px 24px;
+    }
+}

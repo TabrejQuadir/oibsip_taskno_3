@@ -1,0 +1,228 @@
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(8px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.modal-container {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 12px;
+    padding: 20px;
+    width: 90%;
+    max-width: 600px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    position: relative;
+    animation: slide-in 0.3s ease-out forwards;
+}
+
+.modal-container-exit {
+    animation: slide-out 0.3s ease-in forwards;
+}
+
+.modal-content {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 12px;
+    padding: 20px;
+    width: 100%;
+    max-width: 600px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+
+.modal-close-button {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 1.8rem;
+    cursor: pointer;
+    transition: color 0.3s, transform 0.3s, box-shadow 0.3s;
+    color: black;
+}
+
+.modal-close-button:hover {
+    color: red;
+    transform: scale(1.1);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+.modal-close-button:active {
+    color: darkred;
+    transform: scale(0.95);
+}
+
+.modal-title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    background: linear-gradient(to right, #00b4d8, #90e0ef);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.modal-image-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+
+.modal-image {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
+}
+
+.modal-image:hover {
+    transform: scale(1.05);
+}
+
+.modal-details {
+    font-size: 1rem;
+}
+
+.modal-detail-item {
+    margin-bottom: 0.5rem;
+    background: linear-gradient(to right, #00b4d8, #90e0ef);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: bold;
+}
+
+.modal-confirm-button {
+    margin-top: 1.5rem;
+    width: 100%;
+    padding: 12px 0; 
+    background: linear-gradient(135deg, #00b4d8, #90e0ef); 
+    color: white;
+    font-size: 1.25rem;
+    font-weight: bold;
+    border-radius: 12px; 
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); 
+    transition: transform 0.3s ease, background 0.3s ease;
+    cursor: pointer;
+    border: none; 
+    outline: none; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+}
+
+.modal-confirm-button:hover {
+    background: linear-gradient(135deg, #90e0ef, #00b4d8); 
+    transform: translateY(-2px); 
+}
+
+.modal-confirm-button:active {
+    transform: translateY(1px); 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.loading-spinner {
+    border: 4px solid rgba(255, 255, 255, 0.5); 
+    border-top: 4px solid white; 
+    border-radius: 50%;
+    width: 20px; 
+    height: 20px;
+    animation: spin 1s linear infinite;
+    margin-right: 10px; 
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes slide-in {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slide-out {
+    from {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+
+    .modal-container,
+    .modal-content {
+        width: 95%;
+        padding: 15px;
+    }
+
+    .modal-title {
+        font-size: 1.75rem;
+    }
+
+    .modal-image {
+        width: 100px;
+        height: 100px;
+    }
+
+    .modal-confirm-button {
+        font-size: 1.1rem;
+        padding: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .modal-container,
+    .modal-content {
+        width: calc(100% - 30px);
+        padding: 10px;
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+
+    .modal-title {
+        font-size: 1.5rem;
+    }
+
+    .modal-image {
+        width: 80px;
+        height: 80px;
+    }
+
+    .modal-close-button {
+        top: 5px;
+        right: -8px;
+        font-size: 1.4rem;
+       
+        padding: 10px;
+    }
+
+    .modal-close-button:hover {
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.4);
+
+    }
+    .modal-confirm-button {
+        font-size: 1rem;
+        padding: 6px;
+    }
+}

@@ -1,0 +1,164 @@
+.customize-section {
+  position: relative;
+  background: linear-gradient(135deg, #ffafbd, #ffc3a0, #2193b0, #6dd5ed, #cc2b5e, #753a88);
+  background-size: 300% 300%;
+  color: white;
+  border-radius: 1.5rem;
+  padding: 3rem 2rem;
+  text-align: center;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  animation: gradient-move 10s ease infinite;
+}
+
+@keyframes gradient-move {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@media (max-width: 640px) {
+  .customize-section {
+    padding: 2rem 1rem;
+  }
+}
+
+.bg-animated {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle, rgba(255, 193, 7, 0.15), rgba(255, 193, 7, 0.3));
+  opacity: 0.6;
+  mix-blend-mode: screen;
+  animation: pulse 10s infinite alternate;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  50% {
+    transform: scale(1.15);
+    opacity: 1;
+  }
+}
+
+.pizza-image {
+  position: absolute;
+  width: 20% !important;
+  height: auto;
+  border-radius: 1.5rem;
+  z-index: 30;
+  transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out, opacity 0.4s ease-in-out;
+  object-fit: cover; 
+}
+
+.pizza-image-left {
+  left: 1rem;
+  bottom: 2rem;
+  transform: translateX(-20%) rotate(-8deg);
+}
+
+.pizza-image-right {
+  right: 1rem;
+  bottom: 2rem;
+  transform: translateX(20%) rotate(8deg);
+}
+
+.pizza-image:hover {
+  transform: scale(1.15) rotate(0deg); 
+  box-shadow: 0 25px 35px rgba(0, 0, 0, 0.4);
+  opacity: 1; 
+}
+
+.text-container {
+  position: relative;
+  z-index: 20;
+  padding: 2rem;
+  backdrop-filter: blur(10px);
+  border-radius: 1rem;
+  background: rgba(0, 0, 0, 0.3);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Text animations */
+@keyframes slide-in {
+  from {
+    opacity: 0;
+    transform: translateY(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.heading {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.7);
+}
+
+.slogan {
+  font-size: 1.25rem;
+  margin-bottom: 1.5rem;
+  text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.7);
+}
+
+.customize-button {
+  background: linear-gradient(45deg, #00b4d8, #90e0ef);
+  color: white;
+  border: none;
+  font-weight: 700;
+  padding: 1rem 2rem;
+  border-radius: 9999px;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3);
+  transition: transform 0.4s ease-in-out, background 0.4s ease-in-out, color 0.4s ease-in-out;
+  font-size: 1rem;
+  text-transform: uppercase;
+}
+
+.customize-button:hover {
+  transform: scale(1.1) rotate(-2deg);
+  background: linear-gradient(45deg, #00b4d8, #0096c7);
+  color: #fff;
+  cursor: pointer;
+}
+
+.text-shadow-lg {
+  text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.7);
+}
+
+.animate-slide-in {
+  animation: slide-in 0.8s ease-out forwards;
+}
+
+.animate-slogan-in {
+  animation: slide-in 0.9s ease-out forwards;
+}
+
+@media (max-width: 640px) {
+  .text-container {
+    padding: 1rem;
+  }
+  .customize-section {
+    padding: 2rem 1rem;
+  }
+  .heading {
+    font-size: 1.5rem;
+  }
+  .slogan {
+    font-size: 1rem;
+  }
+  .customize-button {
+    padding: 0.75rem 1.5rem;
+    font-size: 0.600rem;
+  }
+}

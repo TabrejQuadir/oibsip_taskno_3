@@ -1,0 +1,159 @@
+/* global.css or Navbar.module.css */
+.glass-effect {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    backdrop-filter: blur(15px);
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+}
+
+.nav-link {
+    padding: 0.75rem 1.25rem;
+    border-radius: 10px;
+    transition: all 0.4s ease;
+    font-weight: 600;
+    color: rgba(0, 0, 0, 0.8);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background: linear-gradient(90deg, rgba(255, 0, 150, 1) 0%, rgba(0, 204, 255, 1) 100%);
+    transition: width 0.4s ease;
+}
+
+.nav-link:hover {
+    color: #ee628c;
+    background-clip: text;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.nav-link.active {
+    color: #000000;
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.nav-link.active::after {
+    width: 100%;
+}
+
+
+nav {
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+nav .max-w-7xl {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav img {
+    height: 3.5rem; 
+    width: auto;
+}
+
+nav .md\\:hidden {
+    display: flex;
+    align-items: center;
+}
+
+nav .hidden.md\\:flex {
+    display: none;
+}
+
+@media (min-width: 768px) {
+    nav .hidden.md\\:flex {
+        display: flex;
+    }
+
+    nav .md\\:hidden {
+        display: none;
+    }
+}
+
+#mobile-menu {
+    position: fixed;
+    top: -100%; 
+    width: 100%;
+    height: calc(100vh - 80px); 
+    background: linear-gradient(to right, rgb(251, 251, 122), pink, rgb(109, 241, 241)); 
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: top 0.5s ease-in-out; 
+    overflow: hidden;
+}
+
+#mobile-menu.open {
+    top: 80px;
+    animation: slideDown 0.5s ease-in-out forwards;
+}
+
+
+#mobile-menu.closing {
+    top: -100%; 
+    animation: slideUp 0.5s ease-in-out forwards;
+}
+
+@keyframes slideDown {
+    from {
+        top: -100%;
+    }
+    to {
+        top: 80px;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        top: 80px;
+    }
+    to {
+        top: -100%;
+    }
+}
+
+
+#mobile-menu button,
+#mobile-menu a {
+    margin: 0.5rem 0;
+    width: 80%;
+    text-align: center;
+}
+
+button, a {
+    text-decoration: none;
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover, a:hover {
+    transform: scale(1.05);
+}
+
+.no-scroll {
+    overflow: hidden;
+}
+
+.navv{
+position: relative;
+z-index: 1000;
+}
