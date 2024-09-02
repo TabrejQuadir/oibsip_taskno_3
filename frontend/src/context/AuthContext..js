@@ -13,7 +13,7 @@ export const AuthProvider = ({ children }) => {
 
             if (token) {
                 try {
-                    const response = await axios.get('http://localhost:5000/api/users/status', {
+                    const response = await axios.get('https://oasis-infobyte-backend.onrender.com/api/users/status', {
                         headers: { 'Authorization': `Bearer ${token}` }
                     });
                     setIsAuthenticated(response.data.isAuthenticated);

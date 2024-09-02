@@ -2,7 +2,7 @@ import axios from 'axios';
 
 const handlePayment = async (selection, confirmOrder) => {
     try {
-        const response = await axios.post('http://localhost:5000/api/payment/order', {
+        const response = await axios.post('https://oasis-infobyte-backend.onrender.com/api/payment/order', {
             amount: selection.price,
             currency: 'INR'
         }, {
