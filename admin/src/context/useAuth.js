@@ -4,7 +4,7 @@ import axios from 'axios';
 
 const AuthContext = createContext();
 
-const BASE_URL = 'http://localhost:5000/api';
+const BASE_URL = 'https://oasis-infobyte-backend.onrender.com/api';
 
 export const AuthProvider = ({ children }) => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);

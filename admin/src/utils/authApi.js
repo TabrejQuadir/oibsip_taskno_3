@@ -1,7 +1,7 @@
 import axios from 'axios';
 
-const API_URL = 'http://localhost:5000/api/users';
-const ADMIN_URL = "http://localhost:3001"
+const API_URL = 'https://oasis-infobyte-backend.onrender.com/api/users';
+const ADMIN_URL = "https://oasis-infobyte-admin.onrender.com"
 
 export const register = async (userData) => {
     try {

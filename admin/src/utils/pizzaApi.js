@@ -1,7 +1,7 @@
 // src/utils/pizzaApi.js
 import axios from 'axios';
 
-const API_URL = 'http://localhost:5000/api';
+const API_URL = 'https://oasis-infobyte-backend.onrender.com/api';
 
 const apiRequest = async (method, endpoint, data = null) => {
     try {
