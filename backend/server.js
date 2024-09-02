@@ -15,7 +15,7 @@ const paymentRoutes = require('./routes/paymentRoutes');
 
 const app = express();
 
-const allowedOrigins = ['http://localhost:3000', 'http://localhost:3001'];
+const allowedOrigins = ['https://oasis-infobyte-frontend.onrender.com', 'https://oasis-infobyte-admin.onrender.com'];
 
 const corsOptions = {
     origin: function (origin, callback) {
