@@ -73,7 +73,7 @@ export const getMeats = async () => {
 
 export const addPizza = async (newOrder) => {
     try {
-        const response = await fetch('http://localhost:5000/api/pizzas/add', {
+        const response = await fetch(`${API_URL}/pizzas/add`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
